@@ -10,3 +10,7 @@ jobs:
     - uses: cachix/install-nix-action@v20
     - run: nix build .#
     - run: ./result
+    - uses: actions/upload-artifact@v3
+    with:
+      name: result
+      path: ./result
