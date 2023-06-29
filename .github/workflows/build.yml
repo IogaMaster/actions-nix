@@ -10,7 +10,7 @@ jobs:
     - uses: cachix/install-nix-action@v20
     - run: nix build .#
     - run: ./result
-    - uses: actions/upload-artifact@v3
+    - uses: ncipollo/release-action@v1
       with:
-        name: result
-        path: ./result
+        artifacts: "result"
+        body: "Automated Build"
