@@ -11,6 +11,6 @@ jobs:
     - run: nix build .#
     - run: ./result
     - uses: actions/upload-artifact@v3
-    with:
-      name: result
-      path: ./result
+      with:
+        name: result
+        path: ./result
