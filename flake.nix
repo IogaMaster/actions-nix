@@ -25,6 +25,23 @@
 
           buildInputs = with pkgs; [ ];
         };
+
+        packages.default = pkgs.stdenv.mkDerivation {
+          name = "actions-nix";
+          src = ./.;
+
+          nativeBuildInputs = with pkgs; [
+            rust-bin.stable.latest.default
+          ];
+
+          buildPhase = ''
+            cargo build --release
+          '';
+
+          installPhase = ''
+            cp target/release/project_name $out
+          '';
+        };
       }
     );
 }
