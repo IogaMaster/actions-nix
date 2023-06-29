@@ -1,3 +1,3 @@
 fn main() {
-    println!("Nix build works!");
+    println!("Nix build works!"
 }
